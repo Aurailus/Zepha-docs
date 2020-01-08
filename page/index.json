@@ -1,0 +1,60 @@
+{
+	"dirs": [
+		{
+			"name": "Tutorials",
+			"file": "tutorials",
+			"order": 0,
+			"pages": [
+				{"name": "Foreword", "order": 0, "file": "intro"},
+				{"name": "Intro to Lua", "order": 1, "file": "lua"},
+				{"name": "Registering Blocks", "order": 2, "file": "register"},
+				{"name": "Callbacks", "order": 3, "file": "callback"}
+			]
+		},
+		{
+			"name": "Usertypes",
+			"file": "usertypes",
+			"pages": [
+				{"name": "LuaEntity", "file": "luaentity"},
+				{"name": "LuaPlayer", "file": "luaplayer"}
+			]
+		},
+		{
+			"name": "Globals",
+			"file": "globals",
+			"pages": [
+				{"name": "Environment Variables", "order": 0, "file": "environment_variables"},
+				{"name": "dump", "file": "dump"},
+				{"name": "printe", "file": "printe"}
+			]
+		},
+		{
+			"name": "Core Methods",
+			"file": "methods",
+			"pages": [
+				{"name": "zepha.set_block", "file": "zepha_set_block"},
+				{"name": "zepha.get_block", "file": "zepha_get_block"},
+				{"name": "zepha.add_entity", "file": "zepha_add_entity"},
+				{"name": "zepha.delay", "file": "zepha_delay"},
+				{"name": "zepha.is_server", "file": "zepha_is_server"},
+				{"name": "zepha.remove_block", "file": "zepha_remove_block"},
+				{"name": "zepha.remove_entity", "file": "zepha_remove_entity"},
+				{"name": "zepha.register_block", "file": "zepha_register_block"},
+				{"name": "zepha.register_blockmodel", "file": "zepha_register_blockmodel"},
+				{"name": "zepha.register_entity", "file": "zepha_register_entity"},
+				{"name": "zepha.register_item", "file": "zepha_register_item"},
+				{"name": "zepha.register_keybind", "file": "zepha_register_keybind"}
+			]
+		},
+		{
+			"name": "Definitions",
+			"file": "definitions",
+			"pages": [
+				{"name": "Block Definition", "file": "block_definition"},
+				{"name": "Blockmodel Definition", "file": "blockmodel_definition"},
+				{"name": "Entity Definition", "file": "entity_definition"},
+				{"name": "Biome Definition", "file": "biome_definition"}
+			]
+		}
+	]
+}

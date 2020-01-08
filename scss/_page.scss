@@ -1,0 +1,226 @@
+$push-right-threshold: 1234px;
+
+main#page {	
+	.page-wrapper.aside {
+		width: 1060px;
+		padding-left: 216px;
+		position: relative;
+		overflow: visible;
+
+		@media screen and (max-width: $push-right-threshold) {
+			padding-left: 274px;
+			width: 100%;
+		}
+	}
+
+	p {
+		line-height: 1.4em;
+	}
+
+	p > a[href^="#"] {
+		position: relative;
+		padding-left: 20px;
+
+			&::before {
+				content: "link";
+				font-family: "Material Icons";
+				position: absolute;
+				opacity: 0.7;
+				font-size: 20px;
+				font-weight: 500;
+				transform: rotate(-45deg);
+				vertical-align: baseline;
+				left: -1px;
+				top: -2px;
+			}
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		transition: background-color 0.3s;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			&:hover, &:focus {
+				text-decoration: underline;
+			}
+		}
+
+		&:target, &.target {
+			border-radius: 4px;
+			position: relative;
+			padding-left: 32px;
+			transition: padding-left 0.3s;
+
+			&::before {
+				content: "link";
+				font-family: "Material Icons";
+				position: absolute;
+				opacity: 0;
+				font-size: 28px;
+				font-weight: 500;
+				left: 0;
+				top: -2px;
+				vertical-align: baseline;
+				transform: rotate(-45deg);
+				animation: fade_in 0.3s ease-in-out 0s 1 normal;
+				animation-fill-mode: forwards;
+			}
+
+			@keyframes fade_in {
+				from {opacity: 0;}
+				to {opacity: 0.5;}
+			}
+		}
+	}
+
+	h1 { &:target, &.target { &::before { top: 8px; left: 4px; } } }
+	h2 { &:target, &.target { &::before { top: 0px; left: 2px; } } }
+
+	pre.language-lua {
+		padding: 0.5em inherit;
+	}
+
+	.page-aside-bounding-box {
+		@media screen and (max-width: $push-right-threshold) {
+			left: 12px;
+		}
+
+		position: absolute;
+		display: block;
+		top: 32px;
+		left: -120px;
+
+		&.bottom {
+			top: initial;
+			bottom: 24px;
+		}
+
+		.page-aside-wrap {
+			width: 300px;
+			max-height: calc(100vh - 80px);
+			border-radius: 4px;
+			height: auto;
+			background-color: var(--code-background-color);
+			overflow: auto;
+  		direction: rtl;
+
+			@media screen and (max-width: $push-right-threshold) {
+				width: 250px;
+			}
+
+  		&::-webkit-scrollbar {
+  			display: none;
+  		}
+
+			&.sticky {
+				position: fixed;
+				top: 64px;
+			}
+
+			.page-aside {
+				padding: 16px 0px;
+  			direction:ltr;
+
+  			.ml-wrap, .tl-wrap {
+  				overflow: hidden;
+  				transition: height 0.2s;
+  			}
+
+				.item {
+					display: block;
+					position: relative;
+					margin: 0;
+					padding: 6px 0px;
+					user-select: none;
+					text-decoration: none;
+					color: var(--heading-text-color);
+					cursor: pointer;
+					transition: background-color 0.15s;
+
+					&.collapsed {
+						&+.ml-wrap, &+.tl-wrap {
+							height: 0;
+						}
+					}
+
+					button {
+						position: absolute;
+						display: block;
+						opacity: 0.4;
+						width: 32px;
+						height: 32px;
+						background-color: transparent;
+						border: none;
+						border-radius: 50%;
+						font-size: 32px;
+						cursor: pointer;
+						font-family: "Material Icons";
+						outline: 0;
+						color: var(--heading-text-color);
+
+						transform: rotate(90deg);
+						top: -8px;
+						left: 10px;
+
+						transition: transform 0.1s, top 0.1s, left 0.1s;
+						
+						&:focus {
+							opacity: 0.8;
+						}
+
+						&:hover {
+							opacity: 1;
+						}
+
+						&.collapsed {
+							transform: rotate(0deg);
+							left: 4px;
+							top: -3px;
+						}
+					}
+
+					&:hover, &:focus {
+						background-color: rgba(0, 0, 0, 0.04);
+						body.dark & {
+							background-color: rgba(255, 255, 255, 0.03);
+						}
+					}
+
+					&:active {
+						background-color: rgba(0, 0, 0, 0.08);
+						body.dark & {
+							background-color: rgba(255, 255, 255, 0.08);
+						}
+					}
+
+					&.level1 {
+						padding-left: 40px;
+						font-weight: bold;
+					}
+					
+					&.level2 {
+						padding-left: 56px;
+
+						button {
+							left: 26px;
+
+
+							&.collapsed {
+								transform: rotate(0deg);
+								left: 20px;
+								top: -3px;
+							}
+						}
+					}
+					
+					&.level3 {
+						padding-left: 72px;
+						color: var(--copy-text-color);
+					}
+				}
+			}
+		}
+	}
+}

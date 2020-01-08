@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# 404 Page
+
+ErrorDocument 404 /404.php
+
+# If a file exists as requested, or one can be found
+# by appending .php to the query, go there.
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [QSA,L]
+
+# If the file does not exist, redirect to page.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php !-f
+
+RewriteRule ^(.*)$ page.php?page=$1 [NC,L,QSA]

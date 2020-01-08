@@ -1,0 +1,38 @@
+$body-family: Roboto, 'Noto Sans', Ubuntu, 'Segoe UI', 'Calibri', 'Arial', sans-serif;
+$header-family: 'Montserrat', $body-family;
+$code-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+
+$aside-width: 300px;
+
+@import "basic";
+@import "layout";
+@import "glossary";
+@import "page";
+
+:root {
+	--accent-color: #1e8bb5;
+	--accent-color-dark: #066e96;
+	--main-background-color: #fff;
+	--header-background-color: #f3f3f3;
+	--footer-background-color: #eee;
+	--heading-text-color: #000;
+	--subheading-text-color: #111;
+	--copy-text-color: #333;
+	--link-text-color: #1d8468;
+	--link-text-color-focus: #1a634f;
+	--link-text-color-active: #3a9e85;
+	--code-background-color: #F5F2F0;
+}
+
+body.dark {
+	--main-background-color: #222;
+	--header-background-color: #333;
+	--footer-background-color: #171717;
+	--heading-text-color: #fff;
+	--subheading-text-color: #ccc;
+	--copy-text-color: #aaa;
+	--link-text-color: #2ead8d;
+	--link-text-color-focus: #51c5a8;
+	--link-text-color-active: #238a70;
+	--code-background-color: #2d2d2d;
+}
